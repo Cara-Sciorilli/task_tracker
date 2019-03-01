@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-12">
+    <h1>Welcome to Task Tracker</h1>
+    <p> In this application you can keep track of tasks. By clicking View Tasks, you can see all of the tasks currently created. By clicking View Users, you can see all of the users of these tasks. If you would like to add a User or Task click the respective buttons.</p>
+    <p><a class="btn btnView" href="/tasks">View Tasks</a>  <a class="btn btnView" href="/users">View Users</a>  <%= link "Add New Task", to: Routes.task_path(@conn, :new), class: 'btn btnNew'%>  <%= link "Register User", to: Routes.task_path(@conn, :new), class: 'btn btnNew' %> </p>
+  </div>
+</div>

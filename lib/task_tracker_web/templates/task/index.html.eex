@@ -1,0 +1,44 @@
+<h1>List of Tasks</h1>
+<p>This is the list of tasks that are in motion. By clicking the Edit button you can:</p>
+<ul>
+  <li>If you are the user assigned to a task you may track your time in 15 minute increments.</li>
+  <li>Assign/reassign tasks to any of the users that are currently registered.</li>
+  <li>Edit the Name or Description of the Task.</li>
+</ul>
+<p>If you would like to add a new Task or new User you may use the buttons at the bottom of the table.</p>
+<table class="table table-striped">
+  <thead class='topRow'>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Time Taken</th>
+      <th>Completed</th>
+      <th>User Assigned</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for task <- @tasks do %>
+    <tr>
+      <td><%= task.name %></td>
+      <td><%= task.desc %></td>
+      <td><%= task.time %></td>
+      <td><%= task.complete %></td>
+      <td><%= TaskTracker.Users.get_user(task.user_id).name %></td>
+
+      <td>
+        <%= link "Edit", to: Routes.task_path(@conn, :edit, task),
+            class: "btn btn-info" %>
+        <%= link "Show", to: Routes.task_path(@conn, :show, task),
+            class: "btn btn-outline-info" %>
+        <%= link "Delete", to: Routes.task_path(@conn, :delete, task),
+            method: :delete, data: [confirm: "Are you sure?"],
+            class: "btn btn-danger" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Task", to: Routes.task_path(@conn, :new), class: 'btn btnNew' %> <%= link "New User", to: Routes.user_path(@conn, :new), class: 'btn btnNew' %></span>
