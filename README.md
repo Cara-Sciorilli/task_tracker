@@ -1,4 +1,9 @@
 # TaskTracker
+Design Choices:
+  * Two resources, User and Task.
+  * User has_many Tasks, User cannot be made without a name
+  * Task has a field that belongs_to User, Tasks cannot be made without a Name and Description and Time must be an invterval of 15
+  * UI : Changed the font, Added descriptions of what the user can do at every page, Prettier colors
 
 To start your Phoenix server:
 
