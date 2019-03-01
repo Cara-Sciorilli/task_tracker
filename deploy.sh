@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 export MIX_ENV=prod
 export PORT=4794
@@ -15,6 +16,7 @@ mix compile
 (cd assets && npm install)
 (cd assets && webpack --mode production)
 mix phx.digest
+mix ecto.migrate
 
 echo "Generating release..."
 mix release
