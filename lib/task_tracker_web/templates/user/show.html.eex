@@ -9,7 +9,20 @@
 
   <li>
     <strong>Manager:</strong>
-    <%= TaskTracker.Users.get_user(@user.manager_id).name %>
+    <%= if @user.manager_id != nil do %>
+      <td><%= TaskTracker.Users.get_user(@user.manager_id).name %></td>
+    <% else %>
+      <td>No Manager</td>
+    <% end %>
+  </li>
+
+  <li>
+    <strong>Underlings:</strong>
+     <ul>
+     <%= for u <- TaskTracker.Users.list_users_by_manager(@user.id) do %>
+      <li>  <%= u.name %>
+     <% end %>
+    </ul>
   </li>
 
 </ul>

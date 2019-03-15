@@ -13,7 +13,11 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.name %></td>
-      <td><%= TaskTracker.Users.get_user(user.manager_id).name %></td>
+      <%= if user.manager_id != nil do %>
+        <td><%= TaskTracker.Users.get_user(user.manager_id).name %></td>
+      <% else %>
+        <td>No Manager</td>
+      <% end %>
 
       <td>
         <%= link "Edit", to: Routes.user_path(@conn, :edit, user),
