@@ -1,4 +1,4 @@
-# TaskTracker
+# TaskTracker 1
 Design Choices:
   * Two resources, User and Task.
   * User has_many Tasks
@@ -6,6 +6,19 @@ Design Choices:
   * Task has a field that belongs_to User
   * Tasks cannot be made without a Name and Description and Time must be an invterval of 15
   * UI : Changed the font, Added descriptions of what the user can do at every page, Prettier colors
+
+# TaskTracker 2
+Design Choices:
+  * User has one manager
+  * User has manager field that belongs_to User
+  * User can be their own manager
+  * There can be manager loops (two managers can be underlings to each other)
+  * New Resource: Timeblock
+  * Task has a field that has_many Timeblocks
+  * Timeblock has task field that belongs_to Task
+  * Timeblocks must be edited in Date Time UTC Format
+  * UI : Tasks shows both the logged in user's tasks and and the logged in user's underlings tasks in two tables
+  * UI : Show task page has button to start and stop tracking and table to display time blocks
 
 To start your Phoenix server:
 
