@@ -45,7 +45,7 @@
         <td><%= tb.id %></tb>
         <td><input id="edit-start" type="text" class="form-control" value="<%= tb.start %>"</td>
         <td><input id="edit-end" type="text" class="form-control" value="<%= tb.end %>"</td>
-        <td><button id="save-timeblock" data-tb-id="<%= tb.id %>" class="btn btn-info">Save Update</button></td>
+        <td><button data-tb-id="<%= tb.id %>" class="btn btn-info save-timeblock">Save Update</button></td>
       </tr>
     <% end %>
   </tbody>

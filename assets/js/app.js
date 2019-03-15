@@ -40,12 +40,11 @@ $(function () {
       success: (resp) => {location.reload()},
     });
   });
-  $('#save-timeblock').click((ev) => {
+  $('.save-timeblock').click((ev) => {
     let id = $(ev.target).data("tb-id")
     let row = $(ev.target).closest(".tb-edit")
     let start_field = row.find("#edit-start")
     let stop_field = row.find("#edit-end")
-    console.log(id)
     $.ajax("/ajax/timeblocks/" + id, {
       method: "put",
       datatype: "json",
