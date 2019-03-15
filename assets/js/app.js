@@ -45,7 +45,8 @@ $(function () {
     let row = $(ev.target).closest(".tb-edit")
     let start_field = row.find("#edit-start")
     let stop_field = row.find("#edit-end")
-    $.ajax("/ajax/timeblocks/"+id, {
+    console.log(id)
+    $.ajax("/ajax/timeblocks/" + id, {
       method: "put",
       datatype: "json",
       contentType: "application/json; charset=UTF-8",

@@ -12,7 +12,6 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Time Taken</th>
       <th>Completed</th>
       <th>User Assigned</th>
 
@@ -24,7 +23,6 @@
     <tr>
       <td><%= task.name %></td>
       <td><%= task.desc %></td>
-      <td><%= task.time %></td>
       <td><%= task.complete %></td>
       <td><%= TaskTracker.Users.get_user(task.user_id).name %></td>
 
@@ -48,7 +46,6 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Time Taken</th>
       <th>Completed</th>
       <th>User Assigned</th>
 
@@ -60,7 +57,6 @@
     <tr>
       <td><%= task.name %></td>
       <td><%= task.desc %></td>
-      <td><%= task.time %></td>
       <td><%= task.complete %></td>
       <td><%= TaskTracker.Users.get_user(task.user_id).name %></td>
 

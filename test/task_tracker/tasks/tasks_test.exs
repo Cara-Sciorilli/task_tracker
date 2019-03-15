@@ -34,7 +34,6 @@ defmodule TaskTracker.TasksTest do
       assert task.complete == true
       assert task.desc == "some desc"
       assert task.name == "some name"
-      assert task.time == Decimal.new("120.5")
     end
 
     test "create_task/1 with invalid data returns error changeset" do
@@ -47,7 +46,6 @@ defmodule TaskTracker.TasksTest do
       assert task.complete == false
       assert task.desc == "some updated desc"
       assert task.name == "some updated name"
-      assert task.time == Decimal.new("456.7")
     end
 
     test "update_task/2 with invalid data returns error changeset" do
